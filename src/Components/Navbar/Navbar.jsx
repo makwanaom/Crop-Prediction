@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import "./Navbar.css";
 import GoogleTranslate from '../GoogleTranslate/GoogleTranslate';
 
 const Navbar = () => {
-    const [activeLink, setActiveLink] = useState('home');
+    const [activeLink, setActiveLink] = useState('');
 
     const handleLinkClick = (link) => {
         setActiveLink(link);
@@ -15,22 +16,22 @@ const Navbar = () => {
                 <h3>AgriApex AI</h3>
                 <ul id='navbar'>
                     <li>
-                        <a 
-                            className={activeLink === 'home' ? 'active' : ''} 
-                            href='/'
+                        <Link 
+                            to="/" 
+                            className={activeLink === 'home' ? 'active' : ''}
                             onClick={() => handleLinkClick('home')}
                         >
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a 
-                            className={activeLink === 'howto' ? 'active' : ''} 
-                            href='#howto'
-                            onClick={() => handleLinkClick('howto')}
+                        <Link 
+                            to="/calculate" 
+                            className={activeLink === 'calculate' ? 'active' : ''}
+                            onClick={() => handleLinkClick('calculate')}
                         >
                             How to calculate?
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <GoogleTranslate />
