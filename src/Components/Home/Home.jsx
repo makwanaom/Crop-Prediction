@@ -18,9 +18,11 @@ const Home = () => {
         let intervalId;
 
         const slide = () => {
-            slider.scrollLeft += slider.clientWidth; 
+            
             if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
                 slider.scrollLeft = 0; 
+            }else {
+                slider.scrollLeft += slider.clientWidth; 
             }
         };
 

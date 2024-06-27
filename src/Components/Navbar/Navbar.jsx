@@ -30,7 +30,7 @@ const Navbar = () => {
                             className={activeLink === 'calculate' ? 'active' : ''}
                             onClick={() => handleLinkClick('calculate')}
                         >
-                            How to calculate?
+                            Compute
                         </Link>
                     </li>
                 </ul>
