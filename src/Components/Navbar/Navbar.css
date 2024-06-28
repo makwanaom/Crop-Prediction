@@ -13,7 +13,9 @@ nav {
     padding: 15px 5%;
     flex-wrap: wrap;
 }
-
+a{
+    color: white;
+}
 h3 {
     font-size: 1.5rem;
     color: #ffffff;

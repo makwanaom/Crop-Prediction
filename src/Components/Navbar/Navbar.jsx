@@ -13,9 +13,18 @@ const Navbar = () => {
     return (
         <>
             <nav>
-                <h3>AgriApex AI</h3>
+                <h3>
+                        <Link   
+                            to="/" 
+                            className={activeLink === 'home' ? 'active' : ''}
+                            onClick={() => handleLinkClick('home')}
+                            style={{color:"white"}}
+                        >
+                            AgriApex AI
+                        </Link>
+                    </h3>
                 <ul id='navbar'>
-                    <li>
+                    {/* <li>
                         <Link 
                             to="/" 
                             className={activeLink === 'home' ? 'active' : ''}
@@ -23,14 +32,14 @@ const Navbar = () => {
                         >
                             Home
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link 
                             to="/calculate" 
                             className={activeLink === 'calculate' ? 'active' : ''}
                             onClick={() => handleLinkClick('calculate')}
                         >
-                            Compute
+                            Measure Parameters
                         </Link>
                     </li>
                     <li>
