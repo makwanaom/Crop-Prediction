@@ -43,7 +43,7 @@ const Home = () => {
             "imgs": ['/chili.jpg', '/chili-plant.jpg']
         },
         {
-            "crop": "Carrot",
+            "crop": "Carrots",
             "url": "https://youtu.be/Jg5bJNCygtc?si=fDBcSko8gI_fH16K",
             "imgs": ['/carrot.jpg', '/carrot-plant.jpg']
         },
