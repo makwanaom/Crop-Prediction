@@ -25,7 +25,7 @@ const Home = () => {
         {
             "crop": "Kidneybeans",
             "url": "https://youtu.be/sxS9ad32f4M?feature=shared",
-            "imgs": ['/kidneybeans.jpg', '/Kidneybenas-1.jpg', '/kidneybenas-2.jpg']
+            "imgs": ['/kidneybeans.jpg', '/Kidneybeans-1.jpg', '/kidneybeans-2.jpg']
         },
         {
             "crop": "Eggplants",
@@ -95,7 +95,7 @@ const Home = () => {
         {
             "crop": "Grapes",
             "url": "https://youtu.be/BNl3R8PagJg?si=dVVNsK94Wg_JeNwk",
-            "imgs": ['/grapes.jpg', '/grapes-plant.jpg']
+            "imgs": ['/grapes.avif', '/grapes-plant.jpg']
         },
         {
             "crop": "Mango",
@@ -365,7 +365,7 @@ const Home = () => {
                         if(c.crop.toLowerCase() == crop.toLowerCase()){
                             // setYt(c.url);
                             console.log("GOT IT!",c.url);
-                            <YouTube key={i} videoId={c.url} />
+                            return <a style={{marginTop:"40px"}} target='_blank' key={i} href={c.url}>Click Here to watch a tutorial!</a>
                         }
                     }):
                     null
