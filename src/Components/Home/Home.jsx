@@ -213,15 +213,115 @@ const Home = () => {
             {/* {cropImage && <img src={cropImage} width="120px" alt="Crop" className="crop-image" />} */}
             <div className='input-container'>
                 <form onSubmit={handleSubmit}>
-                    <input type="number" name="Nitrogen (N)" placeholder="Nitrogen (N)" required />
-                    <input type="number" name="Phosphorus (P)" placeholder="Phosphorus (P)" required />
-                    <input type="number" name="Potassium (K)" placeholder="Potassium (K)" required />
-                    <input type="number" name="Temperature (°C)" placeholder="Temperature (°C)" required />
-                    <input type="number" name="Humidity" placeholder="Humidity" required />
-                    <input type="number" name="pH" placeholder="pH" required />
-                    <input type="number" name="Rainfall" placeholder="Rainfall" required />
-                    <input type="number" name="Soil EC" placeholder="Soil EC" required />
-                    <button type="submit">Submit</button>
+                    <div className="val-container">
+                        <input type="double" name="Nitrogen (N)" placeholder="Nitrogen (N)" required />     
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter the measure of Nitrogen element</p>
+                                </div>
+                            </div>
+                        </div>                  
+                    </div>
+                    <div className="val-container">
+                        <input type="double" name="Phosphorus (P)" placeholder="Phosphorus (P)" required />
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter the measure of Phosphorus element</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div className="val-container">
+                        <input type="double" name="Potassium (K)" placeholder="Potassium (K)" required />
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter the measure of Potassium element</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    {/* <div className="val-container">
+                    </div> */}
+                    <div className="val-container">
+                        <input type="double" name="Temperature (°C)" placeholder="Temperature (°C)" required />
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter the Temperature in Celcius</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div className="val-container">
+                        <input type="double" name="Humidity" placeholder="Humidity" required />
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter the Humidity in %</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div className="val-container">
+                        <input type="double" name="pH" placeholder="pH" required />
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter the amount of ph</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div className="val-container">
+                        <input type="double" name="Rainfall" placeholder="Rainfall" required />
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter the measure of Rainfall</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div className="val-container">
+                        <input type="double" name="Soil EC" placeholder="Soil Electrical Conductivity" required />
+                        <div className="item-hints">
+                            <div className="hint" data-position="4">
+                                
+                                <span className="hint-radius"></span>
+                                <span className="hint-dot"></span>
+                                <div className="hint-content do--split-children">
+                                <p>Enter measure of Soil Electrical Conductivity</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <button type="submit">
+                        Submit
+                    </button>
                 </form>
             </div>
             <div style={{
