@@ -11,28 +11,35 @@
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    position: relative; /* Add position relative to the parent container */
 }
 
-.wrapper {
+.slider {
     display: flex;
-    width: 100%; 
-    overflow-x: hidden; 
-    scroll-snap-type: x mandatory; 
+    width: 300%; /* 3 images, so 300% */
+    animation: slide 9s infinite; /* 3s per image for a total of 9s */
 }
 
 .img {
-    width: 100%; 
-    scroll-snap-align: start; 
+    width: 33.33%; /* Each image takes 1/3 of the slider width */
+    flex-shrink: 0;
     border-radius: 8px; 
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33.33% { transform: translateX(0); }
+    33.34% { transform: translateX(-33.33%); }
+    66.66% { transform: translateX(-33.33%); }
+    66.67% { transform: translateX(-66.66%); }
+    100% { transform: translateX(-66.66%); }
 }
 
 .input-container {
     width: 35%; 
     padding: 20px;
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  */
     border-radius: 8px;
     margin-right: 70px;
-   
 }
 
 form {
@@ -71,7 +78,6 @@ input:focus, button:focus {
     border-color: #555; 
 }
 
-
 @media screen and (max-width: 768px) {
     .flex {
         flex-direction: column;
@@ -87,9 +93,5 @@ input:focus, button:focus {
         width: 100%; 
         margin-right: 0; 
         padding: 10px; 
-    }
-
-    .wrapper {
-        scroll-snap-type: none; 
     }
 }

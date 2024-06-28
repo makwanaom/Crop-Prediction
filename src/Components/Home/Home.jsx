@@ -203,28 +203,28 @@ const Home = () => {
     };
 
     useEffect(() => {
-        const slider = sliderRef.current;
-        let intervalId;
+      const slider = sliderRef.current;
+      let intervalId;
 
-        const slide = () => {
-            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-                slider.scrollLeft = 0;
-            } else {
-                slider.scrollLeft += slider.clientWidth;
-            }
-        };
+      const slide = () => {
+          if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+              slider.scrollLeft = 0;
+          } else {
+              slider.scrollLeft += slider.clientWidth;
+          }
+      };
 
-        intervalId = setInterval(slide, 3000);
+      intervalId = setInterval(slide, 3000);
 
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
+      return () => {
+          clearInterval(intervalId);
+      };
+  }, []);
 
     return (
         <div className='flex'>
             <div className='for-img'>
-                <div ref={sliderRef} className='wrapper'>
+            <div className='slider'>
                     <img className='img' src={Crop} alt="image here" />
                     <img className='img' src={Crop2} alt="image here" />
                     <img className='img' src={Crop3} alt="image here" />
