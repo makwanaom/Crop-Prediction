@@ -9,12 +9,12 @@ const Home = () => {
         {
             "crop": "Maize",
             "url": "https://youtu.be/cWSICq994ek?feature=shared",
-            "imgs": ['/Maize.jpg', '/maize-infarm.jpg']
+            "imgs": ['/maize.jpg', '/maize-infarm.jpg']
         },
         {
             "crop": "Rice",
             "url": "https://youtu.be/6QVwPcooJ2o?feature=shared",
-            "imgs": ['/rice.jpg', '/rice-infarm.webp']
+            "imgs": ['/rice.jpg', '/rice-infarm.jpg']
         },
         {
             "crop": "Chickpea",
@@ -24,7 +24,7 @@ const Home = () => {
         {
             "crop": "Kidney beans",
             "url": "https://youtu.be/sxS9ad32f4M?feature=shared",
-            "imgs": ['/kidneybenas.webp', '/kidneybenas-1.webp', '/kidneybenas-2.webp']
+            "imgs": ['/kidneybeans.jpg', '/Kidneybenas-1.jpg', '/kidneybenas-2.jpg']
         },
         {
             "crop": "Eggplants",
@@ -44,7 +44,7 @@ const Home = () => {
         {
             "crop": "Carrot",
             "url": "https://youtu.be/Jg5bJNCygtc?si=fDBcSko8gI_fH16K",
-            "imgs": ['/carrot.webp', '/carrot-plant.jpg']
+            "imgs": ['/carrot.jpg', '/carrot-plant.jpg']
         },
         {
             "crop": "Coffee",
