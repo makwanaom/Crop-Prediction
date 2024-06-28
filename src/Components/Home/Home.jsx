@@ -332,14 +332,15 @@ const Home = () => {
                 alignItems:"center",
                 width:"fit-content"
             }}>
-                <h1>{crop ? <>Your soil is suitable for growing <b>{crop}</b></> : "Enter the measures of your soil"}</h1>
+                <h1>{crop ? `Your soil is suitable for growing ${crop} !` : "Enter the measures of your soil"}</h1>
                 <div className='for-img'>
                     <div className='slider' ref={sliderRef}>
                         {crop
                             ? 
                                 crops_data.find(c => c.crop.toLowerCase() === crop.toLowerCase())?.imgs.map((img, i) => (
                                     <>
-                                        <img key={i} className='img' src={`../../public/${img}`} alt={img} />
+                                        <img key={i} className='img' src={`/${img}`} alt={img} />
+                                        
                                         {/* <div className="description">
                                             For the given parameters, your soil is more suitable for growing {crop}.
                                             <iframe width="560" height="315" src={crops_data[i].url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
