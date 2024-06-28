@@ -187,10 +187,12 @@ const Home = () => {
                 //     console.log("No images found for", predictedCrop);
                 //     setCropImage(null);
                 // }
-
-                setCropImage(crops_data[0].imgs[0])
-                
-
+                for(let i=0; i<crops_data.length; i++){
+                    if(crops_data[i].crop==crop){
+                        
+                        setCropImage(crops_data[i].imgs[0])
+                    }
+                }
             } else {
                 setCropImage(null);
             }
