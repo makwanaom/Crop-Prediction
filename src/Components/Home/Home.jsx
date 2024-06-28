@@ -339,7 +339,7 @@ const Home = () => {
                             ? 
                                 crops_data.find(c => c.crop.toLowerCase() === crop.toLowerCase())?.imgs.map((img, i) => (
                                     <>
-                                        <img key={i} className='img' src={`/${img}`} alt={img} />
+                                        <img key={i} className='img' src={img} alt={img} />
                                         
                                         {/* <div className="description">
                                             For the given parameters, your soil is more suitable for growing {crop}.
