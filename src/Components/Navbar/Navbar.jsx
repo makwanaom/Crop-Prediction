@@ -33,8 +33,10 @@ const Navbar = () => {
                             Compute
                         </Link>
                     </li>
+                    <li>
+                        <GoogleTranslate /> 
+                    </li>
                 </ul>
-                <GoogleTranslate />
             </nav>
         </>
     );

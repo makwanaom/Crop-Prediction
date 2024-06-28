@@ -158,7 +158,7 @@ const Home = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:5555/data', {
+            const response = await fetch('https://agriapex-ai.onrender.com/data', {
                 method: "POST",
                 mode: "cors",
                 credentials: "same-origin",
