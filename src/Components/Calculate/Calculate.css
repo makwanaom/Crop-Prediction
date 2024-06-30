@@ -1,87 +1,137 @@
 .calculate {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 2rem;
+  color: #2c3e50;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f8ebcf;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.form-container label input,
+.form-container label select,
+.form-container label textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #EF9C66;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #e8c76d;
+}
+.privacy{
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .calculate {
+    padding: 10px;
   }
-  
+
   h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #2c3e50;
-  }
-  
-  h2 {
     font-size: 2rem;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-    margin-top: 2rem;
-    color: #2c3e50;
   }
-  
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
   h4 {
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
+    font-size: 1.1rem;
   }
-  
-  p {
-    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
   }
-  
-  a {
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+  h2 {
+    font-size: 1.3rem;
   }
-  
-  a:hover {
-    color: #2980b9;
+
+  h4 {
+    font-size: 1rem;
   }
-  
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  .animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  @media screen and (max-width: 768px) {
-    .calculate {
-      padding: 10px;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    h2 {
-      font-size: 1.5rem;
-    }
-  
-    h4 {
-      font-size: 1.1rem;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    h1 {
-      font-size: 1.8rem;
-    }
-  
-    h2 {
-      font-size: 1.3rem;
-    }
-  
-    h4 {
-      font-size: 1rem;
-    }
-  }
+}
