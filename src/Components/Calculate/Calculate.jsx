@@ -13,6 +13,7 @@ const Calculate = () => {
   const [harvesting, setHarvesting] = useState('');
   const [location, setLocation] = useState('');
   const [additionalnotes, setAdditionalnotes] = useState('');
+  const API_URL = "https://sheet.best/api/sheets/a0543d15-2071-4b36-9cd0-8694eef0457f";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,10 +29,22 @@ const Calculate = () => {
       Location: location,
       Additionalnotes: additionalnotes
     };
-
+  
     try {
-      const response = await axios.post("https://sheet.best/api/sheets/9cf02861-4608-4fb1-8c9b-ad93b70f6b12", data);
-      console.log(response);
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
+      }
+  
+      const result = await response.json();
+      console.log(result);
       setName('');
       setNumber('');
       setEmail('');
@@ -45,22 +58,10 @@ const Calculate = () => {
       alert("Submit Successfully!");
     } catch (error) {
       console.error("There was an error submitting the form!", error);
-      if (error.response) {
-        console.error("Error data:", error.response.data);
-        console.error("Error status:", error.response.status);
-        console.error("Error headers:", error.response.headers);
-        alert(`There was an error submitting the form: ${error.message}`);
-      } else if (error.request) {
-        console.error("No response received:", error.request);
-        alert("There was an error submitting the form: No response from the server.");
-      } else {
-        console.error("Error setting up the request:", error.message);
-        alert(`There was an error submitting the form: ${error.message}`);
-      }
+      alert(`There was an error submitting the form: ${error.message}`);
     }
   };
-
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
