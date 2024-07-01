@@ -14,7 +14,7 @@ const Calculate = () => {
   const [location, setLocation] = useState('');
   const [additionalnotes, setAdditionalnotes] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
       Name: name,
@@ -27,8 +27,10 @@ const Calculate = () => {
       Harvesting: harvesting,
       Location: location,
       Additionalnotes: additionalnotes
-    }
-    axios.post("https://sheet.best/api/sheets/8fb6d8ea-6587-4b99-aac7-0a7f5dc77ded", data).then((response) => {
+    };
+
+    try {
+      const response = await axios.post("https://sheet.best/api/sheets/9cf02861-4608-4fb1-8c9b-ad93b70f6b12", data);
       console.log(response);
       setName('');
       setNumber('');
@@ -40,9 +42,24 @@ const Calculate = () => {
       setHarvesting('');
       setLocation('');
       setAdditionalnotes('');
-    })
-    alert("Submit Successfully!")
-  }
+      alert("Submit Successfully!");
+    } catch (error) {
+      console.error("There was an error submitting the form!", error);
+      if (error.response) {
+        console.error("Error data:", error.response.data);
+        console.error("Error status:", error.response.status);
+        console.error("Error headers:", error.response.headers);
+        alert(`There was an error submitting the form: ${error.message}`);
+      } else if (error.request) {
+        console.error("No response received:", error.request);
+        alert("There was an error submitting the form: No response from the server.");
+      } else {
+        console.error("Error setting up the request:", error.message);
+        alert(`There was an error submitting the form: ${error.message}`);
+      }
+    }
+  };
+
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -155,42 +172,42 @@ const Calculate = () => {
       <div className='form-container animate-on-scroll'>
         <form onSubmit={handleSubmit}>
           <h2>Crop Yield Form</h2>
-          
+
           <label>
-            <input type="text" onChange={(e) =>setName(e.target.value)} value={name} name="farmerName" placeholder='Farmer Name' />
+            <input type="text" onChange={(e) => setName(e.target.value)} value={name} name="farmerName" placeholder='Farmer Name' />
           </label>
 
           <label>
-            <input type="text" onChange={(e) =>setNumber(e.target.value)} value={number} name="phoneNumber" placeholder="Phone Number" />
+            <input type="text" onChange={(e) => setNumber(e.target.value)} value={number} name="phoneNumber" placeholder="Phone Number" />
           </label>
           <label>
-            <input type="email" onChange={(e) =>setEmail(e.target.value)} value={email} name="emailAddress" placeholder="Email Address" />
-          </label>
-
-          <label> 
-            <input type="text" onChange={(e) =>setTypecrop(e.target.value)} value={typecrop} placeholder='Type of Crop' name="typecrop" />
+            <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} name="emailAddress" placeholder="Email Address" />
           </label>
 
           <label>
-            <input type="text" onChange={(e) =>setAmountgrown(e.target.value)} value={amountgrown} placeholder='Amount Grown (in kg)' name="amountGrown" />
+            <input type="text" onChange={(e) => setTypecrop(e.target.value)} value={typecrop} placeholder='Type of Crop' name="typecrop" />
           </label>
 
           <label>
-            <input type="text" onChange={(e) =>setTimetaken(e.target.value)} value={timetaken} placeholder='Time Taken to Grow (in days)' name="timeTaken" />
+            <input type="text" onChange={(e) => setAmountgrown(e.target.value)} value={amountgrown} placeholder='Amount Grown (in kg)' name="amountGrown" />
+          </label>
+
+          <label>
+            <input type="text" onChange={(e) => setTimetaken(e.target.value)} value={timetaken} placeholder='Time Taken to Grow (in days)' name="timeTaken" />
           </label>
           <label>
             Planting Date
-            <input type="date" onChange={(e) =>setPlantingdate(e.target.value)} value={plantingdate} name="plantingDate" />
+            <input type="date" onChange={(e) => setPlantingdate(e.target.value)} value={plantingdate} name="plantingDate" />
           </label>
           <label>
             Harvesting Date:
-            <input type="date" onChange={(e) =>setHarvesting(e.target.value)} value={harvesting} name="harvestingDate" />
+            <input type="date" onChange={(e) => setHarvesting(e.target.value)} value={harvesting} name="harvestingDate" />
           </label>
           <label>
-            <input type="text" onChange={(e) =>setLocation(e.target.value)} value={location} placeholder='Region/Location' name="location" />
+            <input type="text" onChange={(e) => setLocation(e.target.value)} value={location} placeholder='Region/Location' name="location" />
           </label>
           <label>
-            <textarea placeholder='Additional Notes' onChange={(e) =>setAdditionalnotes(e.target.value)} value={additionalnotes} name="additionalNotes"></textarea>
+            <textarea placeholder='Additional Notes' onChange={(e) => setAdditionalnotes(e.target.value)} value={additionalnotes} name="additionalNotes"></textarea>
           </label>
           <button type="submit">Submit</button>
         </form>
