@@ -215,7 +215,7 @@ const Home = () => {
             <div className='input-container'>
                 <form onSubmit={handleSubmit}>
                     <div className="val-container">
-                        <input type="double" name="Nitrogen (N)" placeholder="Nitrogen (Kg)" required />     
+                        <input type="double" name="Nitrogen (N)" placeholder="Nitrogen (Kg/ha)" required />     
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
@@ -228,7 +228,7 @@ const Home = () => {
                         </div>                  
                     </div>
                     <div className="val-container">
-                        <input type="double" name="Phosphorus (P)" placeholder="Phosphorus (Kg)" required />
+                        <input type="double" name="Phosphorus (P)" placeholder="Phosphorus (Kg/ha)" required />
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
@@ -241,7 +241,7 @@ const Home = () => {
                         </div>    
                     </div>
                     <div className="val-container">
-                        <input type="double" name="Potassium (K)" placeholder="Potassium (Kg)" required />
+                        <input type="double" name="Potassium (K)" placeholder="Potassium (Kg/ha)" required />
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
