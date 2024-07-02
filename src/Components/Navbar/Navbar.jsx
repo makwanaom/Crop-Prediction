@@ -20,6 +20,7 @@ const Navbar = () => {
                             onClick={() => handleLinkClick('home')}
                             style={{color:"white"}}
                         >
+                            <img src="/wheat.png" width={30} alt="" />
                             AgriApex AI
                         </Link>
                     </h3>

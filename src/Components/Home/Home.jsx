@@ -4,9 +4,11 @@ import Crop from "../../assets/crop.jpg";
 import Crop2 from "../../assets/crop2.jpg";
 import Crop3 from "../../assets/crop3.jpg";
 import YouTube from 'react-youtube';
+import Loader from '../Loader/Loader';
 
 const Home = () => {
     const server = import.meta.env.VITE_SERVER;
+    const [loading, setLoading] = useState(false);
     const crops_data = [
         {
             "crop": "Maize",
@@ -162,7 +164,8 @@ const Home = () => {
         try {
             // const response = await fetch('https://agriapex-ai.onrender.com/data', {
             
-            console.log(server)
+            
+            setLoading(true);
             const response = await fetch(server, {
                 method: "POST",
                 mode: "cors",
@@ -172,8 +175,9 @@ const Home = () => {
                 },
                 body: JSON.stringify(data)
             });
-
+            console.log(loading)
             const responseData = await response.json();
+            
             console.log("Response from backend:", responseData);
             const predictedCrop = responseData.predictions ? responseData.predictions[0].values[0][0] : null;
             setCrop(predictedCrop);
@@ -186,8 +190,12 @@ const Home = () => {
             //         }
             //     }
             // }
+
+            setLoading(false)
         } catch (error) {
+            setLoading(false)
             console.error("Error sending data to backend:", error);
+            window.alert(error)
         }
     };
 
@@ -365,6 +373,7 @@ const Home = () => {
                     </div>
                 </div>
                 {/* <YouTube videoId="https://youtu.be/rqehP3vTvnY?si=V0oCQ3mZmmrxXITd" /> */}
+                
                 {crop?
                     crops_data.map((c,i)=>{
                         if(c.crop.toLowerCase() == crop.toLowerCase()){
@@ -375,7 +384,7 @@ const Home = () => {
                     }):
                     null
                 }
-             
+                {loading?<Loader/>:null}
             </div>
         </div>
     );
