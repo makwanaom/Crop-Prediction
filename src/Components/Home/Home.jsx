@@ -216,7 +216,7 @@ const Home = () => {
             <div className='input-container'>
                 <form onSubmit={handleSubmit}>
                     <div className="val-container">
-                        <input type="double" name="Nitrogen (N)" placeholder="Nitrogen (N)" required />     
+                        <input type="double" name="Nitrogen (N)" placeholder="Nitrogen (Kg/ha)" required />     
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
@@ -229,7 +229,7 @@ const Home = () => {
                         </div>                  
                     </div>
                     <div className="val-container">
-                        <input type="double" name="Phosphorus (P)" placeholder="Phosphorus (P)" required />
+                        <input type="double" name="Phosphorus (P)" placeholder="Phosphorus (Kg/ha)" required />
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
@@ -242,7 +242,7 @@ const Home = () => {
                         </div>    
                     </div>
                     <div className="val-container">
-                        <input type="double" name="Potassium (K)" placeholder="Potassium (K)" required />
+                        <input type="double" name="Potassium (K)" placeholder="Potassium (Kg/ha)" required />
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
@@ -270,7 +270,7 @@ const Home = () => {
                         </div>    
                     </div>
                     <div className="val-container">
-                        <input type="double" name="Humidity" placeholder="Humidity" required />
+                        <input type="double" name="Humidity" placeholder="Humidity (%)" required />
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
@@ -296,7 +296,7 @@ const Home = () => {
                         </div>    
                     </div>
                     <div className="val-container">
-                        <input type="double" name="Rainfall" placeholder="Rainfall" required />
+                        <input type="double" name="Rainfall" placeholder="Rainfall (mm)" required />
                         <div className="item-hints">
                             <div className="hint" data-position="4">
                                 
