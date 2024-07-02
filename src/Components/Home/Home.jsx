@@ -6,6 +6,7 @@ import Crop3 from "../../assets/crop3.jpg";
 import YouTube from 'react-youtube';
 
 const Home = () => {
+    const server = import.meta.env.VITE_SERVER;
     const crops_data = [
         {
             "crop": "Maize",
@@ -160,7 +161,9 @@ const Home = () => {
 
         try {
             // const response = await fetch('https://agriapex-ai.onrender.com/data', {
-            const response = await fetch('http://localhost:5555/data', {
+            
+            console.log(server)
+            const response = await fetch(server, {
                 method: "POST",
                 mode: "cors",
                 credentials: "same-origin",
